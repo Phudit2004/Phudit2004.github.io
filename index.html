@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Phudit Meuangchuen | Portfolio</title>
 
     <style>
@@ -12,143 +13,562 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --red: #8b0000;
+            --light-red: #f8dddd;
+            --dark-red: #650000;
+            --cream: #fffaf7;
+            --text: #222;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
         }
 
-        header {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--dark-red);
+            padding: 15px 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
         }
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 20px;
-            color: #d1d5db;
-        }
-
-        .container {
-            max-width: 900px;
+        .nav-container {
+            max-width: 1100px;
             margin: auto;
-            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffdede;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #650000, #a50000);
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .profile {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+            object-position: center top;
+            border: 7px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 5px;
+        }
+
+        .hero-text h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #ffdede;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: var(--dark-red);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background: #ffdede;
+        }
+
+        /* GENERAL */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
         }
 
         section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: var(--dark-red);
+            font-size: 32px;
+            margin-bottom: 25px;
+            border-left: 8px solid var(--red);
+            padding-left: 15px;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .about-box p {
+            font-size: 18px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
             background: white;
             padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            border-top: 5px solid var(--red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        h2 {
+        .card h3 {
+            color: var(--dark-red);
             margin-bottom: 15px;
-            color: #111827;
+            font-size: 22px;
         }
 
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* SKILLS */
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .skill {
-            background: #e5e7eb;
-            padding: 8px 14px;
-            border-radius: 20px;
+            background: var(--light-red);
+            color: var(--dark-red);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: var(--dark-red);
+            color: white;
+            padding: 45px 30px;
+            border-radius: 10px;
+        }
+
+        .contact .section-title {
+            color: white;
+            border-color: white;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin: 10px 0;
         }
 
         .contact a {
-            color: #2563eb;
-            text-decoration: none;
+            color: white;
         }
 
+        /* FOOTER */
         footer {
+            background: #3d0000;
+            color: white;
             text-align: center;
             padding: 25px;
-            background: #111827;
-            color: white;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 12px 15px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile {
+                width: 220px;
+                height: 270px;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-text h2 {
+                font-size: 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Phudit Meuangchuen</h1>
-    <p>Aspiring Web Developer</p>
-</header>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
 
-<div class="container">
+            <div class="logo">
+                PHUDIT MEUANGCHUEN
+            </div>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            Currently studying Computer Engineering at Lampang Rajabhat University
-            and interested in starting a career in Web Development.
-            I am a beginner who is willing to learn new technologies and develop
-            my technical skills. I am responsible, adaptable, and able to work well with others.
-        </p>
-    </section>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-    <section>
-        <h2>Career Interest</h2>
-        <ul>
-            <li>Web Development</li>
-            <li>Frontend Development</li>
-            <li>UI/UX Design</li>
-            <li>Software Development</li>
-            <li>Learning New Technologies</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <h3>Lampang Rajabhat University</h3>
-        <p>Bachelor's Degree in Computer Engineering</p>
-    </section>
-
-    <section>
-        <h2>Skills & Abilities</h2>
-
-        <div class="skills">
-            <div class="skill">Basic Computer Skills</div>
-            <div class="skill">Microsoft Office</div>
-            <div class="skill">Internet & Web Browsing</div>
-            <div class="skill">Willingness to Learn</div>
-            <div class="skill">Teamwork</div>
-            <div class="skill">Adaptability</div>
         </div>
-    </section>
+    </nav>
 
-    <section class="contact">
-        <h2>Contact</h2>
 
-        <p>Email:
-            <a href="mailto:taat998877@gmail.com">
-                taat998877@gmail.com
-            </a>
-        </p>
+    <!-- HERO -->
+    <header class="hero">
 
-        <p>Phone: 096-684-2618</p>
+        <div class="hero-container">
 
-        <p>Location: Lampang, Thailand</p>
-    </section>
+            <img
+                src="profile.png"
+                alt="Phudit Meuangchuen"
+                class="profile"
+            >
 
-</div>
+            <div class="hero-text">
 
-<footer>
-    © 2026 Phudit Meuangchuen
-</footer>
+                <h1>Phudit Meuangchuen</h1>
+
+                <h2>Aspiring Web Developer</h2>
+
+                <p>
+                    Computer Engineering student interested in
+                    Web Development, Frontend Development and UI/UX Design.
+                </p>
+
+                <a href="#contact" class="button">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- ABOUT -->
+        <section id="about">
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <div class="about-box">
+
+                <p>
+                    Currently studying Computer Engineering at Lampang
+                    Rajabhat University and interested in starting a career
+                    in Web Development. I am a beginner who is willing to
+                    learn new technologies and develop my technical skills.
+                    I am responsible, adaptable, and able to work well with others.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAREER INTEREST -->
+        <section>
+
+            <h2 class="section-title">
+                Career Interest
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Web Development</h3>
+
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Frontend Development</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Career Goals</h3>
+
+                    <ul>
+                        <li>Software Development</li>
+                        <li>Learning New Technologies</li>
+                        <li>Developing Practical Skills</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+        <section id="education">
+
+            <h2 class="section-title">
+                Education
+            </h2>
+
+            <div class="card">
+
+                <h3>
+                    Lampang Rajabhat University
+                </h3>
+
+                <p>
+                    Bachelor's Degree in Computer Engineering
+                </p>
+
+                <p>
+                    GPA: 2.46
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section id="skills">
+
+            <h2 class="section-title">
+                Skills & Abilities
+            </h2>
+
+            <div class="about-box">
+
+                <div class="skills">
+
+                    <span class="skill">
+                        Basic Computer Skills
+                    </span>
+
+                    <span class="skill">
+                        Microsoft Office
+                    </span>
+
+                    <span class="skill">
+                        VS Code
+                    </span>
+
+                    <span class="skill">
+                        Internet & Web Browsing
+                    </span>
+
+                    <span class="skill">
+                        Willingness to Learn
+                    </span>
+
+                    <span class="skill">
+                        Teamwork
+                    </span>
+
+                    <span class="skill">
+                        Adaptability
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL INFORMATION -->
+        <section>
+
+            <h2 class="section-title">
+                Personal Information
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Personal Details</h3>
+
+                    <p>
+                        <strong>Full Name:</strong>
+                        Phudit Meuangchuen
+                    </p>
+
+                    <p>
+                        <strong>Nickname:</strong>
+                        Jigsaw / Jig
+                    </p>
+
+                    <p>
+                        <strong>Date of Birth:</strong>
+                        July 16, 2004
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Location</h3>
+
+                    <p>
+                        Lampang City, Thailand
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact">
+
+            <div class="contact">
+
+                <h2 class="section-title">
+                    Contact
+                </h2>
+
+                <p>
+                    📞 Phone:
+                    <a href="tel:0966842618">
+                        096-684-2618
+                    </a>
+                </p>
+
+                <p>
+                    ✉️ Email:
+                    <a href="mailto:taat998877@gmail.com">
+                        taat998877@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    📍 Location:
+                    Lampang City, Thailand
+                </p>
+
+                <p>
+                    💻 GitHub:
+                    <a href="https://github.com/Phudit2004" target="_blank">
+                        github.com/Phudit2004
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        © 2026 Phudit Meuangchuen | Portfolio
+    </footer>
 
 </body>
 </html>
